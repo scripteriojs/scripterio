@@ -39,7 +39,7 @@ Use the `test` function to write test cases and the `describe` function to group
 
 More example:
 
-https://github.com/VadimNastoyashchy/real-test-js-boilerplate-project
+https://github.com/VadimNastoyashchy/scripterio-boilerplate-project
 
 Let's start by creating the `test.js` test file.
 
