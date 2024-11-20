@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## 0.0.2 - 2024-11-20
 ### Added
 - `src` for runner
 - `_tests_` for runner
