@@ -25,7 +25,7 @@ export const printError = (arg) => {
   console.error(
     applyColor(`<red>Error: unknown option: ${arg.replace(/=.*$/, '=')}</red>`)
   )
-  console.error('Usage: npx real-test-js <option>' + EOL)
+  console.error('Usage: npx scripterio <option>' + EOL)
   printHelp()
 }
 

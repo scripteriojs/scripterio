@@ -1,4 +1,4 @@
-// Type definitions for real-test-js
+// Type definitions for scripterio
 
 /**
  * Describe a "suite" with the given title and callback fn containing nested suites.

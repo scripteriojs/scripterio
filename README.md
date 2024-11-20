@@ -161,7 +161,7 @@ test('description', { skip: true }, () => {})
 
 ## `Async/Await support`
 
-RealTestJS also supports async/await approach.
+Also supports async/await approach.
 To use it just add `async` keyword before function callback inside `test` block
 
 ### `Example↓`

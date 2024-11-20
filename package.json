@@ -4,7 +4,7 @@
   "description": "ScripterI/O - Simple, fast, runner for testing all JavaScript",
   "type": "module",
   "bin": {
-    "real-test-js": "src/runner.mjs"
+    "scripterio": "src/runner.mjs"
   },
   "exports": {
     ".": "./src/index.mjs"
