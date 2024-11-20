@@ -7,7 +7,7 @@ import {
   executeAllAndWait,
   withoutLast,
 } from '../utils/transform.mjs'
-import { printSkippedMsg } from './output.mjs'
+import { printNewLine, printSkippedMsg } from './output.mjs'
 
 export const report = []
 const failures = []
@@ -98,7 +98,8 @@ const isTestBlock = (testObject) => testObject.hasOwnProperty('body')
 const indent = (message) => `${' '.repeat(describeStack.length * 2)}${message}`
 
 const runDescribe = async (describe) => {
-  console.log(indent(describe.name))
+  printNewLine()
+  console.log(applyColor(`<bold>${indent(describe.name)}`))
   describeStack = [...describeStack, describe]
   await invokeBeforeAll()
   for (let i = 0; i < describe.children.length; ++i) {

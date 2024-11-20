@@ -46,7 +46,6 @@ export const run = async () => {
         await import(testFilePath)
       })
     )
-    printNewLine()
     const { failures, successes } = await runParsedBlocks()
     printFailuresMsg(failures)
     printTestResult(failures, successes)
@@ -85,6 +84,7 @@ const printFailuresMsg = (failures) => {
 }
 
 const printTestResult = (failures, successes) => {
+  printNewLine()
   console.log(
     applyColor(
       `Tests: <green>${successes} passed</green>, ` +

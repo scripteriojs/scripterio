@@ -37,7 +37,7 @@ export const printExecutionTime = (start, end) => {
 }
 
 export const printRunningTestFile = (testFile) => {
-  console.log(`Running test file: ${testFile}`)
+  console.log(applyColor(`Running test file: <yellow>${testFile}</yellow>`))
 }
 
 export const printNewLine = () => console.log('')
