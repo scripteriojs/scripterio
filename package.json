@@ -1,0 +1,56 @@
+{
+  "name": "scripterio",
+  "version": "0.0.0",
+  "description": "ScripterI/O - Simple, fast, runner for testing all JavaScript",
+  "type": "module",
+  "bin": {
+    "real-test-js": "src/runner.mjs"
+  },
+  "exports": {
+    ".": "./src/index.mjs"
+  },
+  "types": "./src/index.d.ts",
+  "scripts": {
+    "test": "src/runner.mjs --folder=__tests__",
+    "lint": "eslint \"**/*.{js,mjs}\" --ignore-pattern node_modules/",
+    "prettier": "prettier . --check",
+    "fix-formatting": "npx prettier --write ."
+  },
+  "author": "Vadym Nastoiashchyi",
+  "keywords": [
+    "runner",
+    "mocha",
+    "test",
+    "bdd",
+    "tdd",
+    "tap",
+    "testing",
+    "chai",
+    "assertion",
+    "ava",
+    "jest",
+    "tape",
+    "jasmine",
+    "karma",
+    "expect",
+    "easy",
+    "fast"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VadimNastoyashchy/scripterio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/VadimNastoyashchy/scripterio/issues"
+  },
+  "homepage": "https://github.com/VadimNastoyashchy/scripterio#readme",
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-n": "^16.6.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "prettier": "3.0.3"
+  }
+}
