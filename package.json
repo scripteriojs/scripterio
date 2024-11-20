@@ -12,9 +12,8 @@
   "types": "./src/index.d.ts",
   "scripts": {
     "test": "src/runner.mjs --folder=__tests__",
-    "lint": "eslint \"**/*.{js,mjs}\" --ignore-pattern node_modules/",
-    "prettier": "prettier . --check",
-    "fix-formatting": "npx prettier --write ."
+    "lint": "eslint \"**/*.{js,mjs}\" --ignore-pattern node_modules/ --fix",
+    "prettier": "npx prettier --write ."
   },
   "author": "Vadym Nastoiashchyi",
   "keywords": [
