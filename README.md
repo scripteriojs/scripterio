@@ -1,5 +1,9 @@
-<p align="center" style="font-size:120%;">
-ScripterI/O - Simple, fast, runner for testing all JavaScript
+<p align="center">
+  <img src="assets/logo.png" height="100" alt="ScripterI/O  test framework logo"/>
+</p>
+
+<p align="center">
+<b>ScripterI/O - Simple, fast, runner for testing all JavaScript</b>
 </p>
 
 <p align="center">
@@ -15,7 +19,7 @@ ScripterI/O - Simple, fast, runner for testing all JavaScript
   <a href="https://www.npmjs.com/package/scripterio">Link to NPM repository > scripterio</a> 
 </p>
 
-#### ScripterI/O is a JavaScript testing framework running on Node.js that makes testing easy and fun.
+<p align="center">ScripterI/O is a JavaScript testing framework running on Node.js that makes testing easy and fun.</p>
 
 ## Getting started
 
