@@ -18,7 +18,7 @@ let hasBeforeAll = false
 let hasAfterAll = false
 let beforeAllStack = []
 let afterAllStack = []
-let defaultTimeout = 5_000
+const defaultTimeout = 5_000
 
 const makeDescribe = (name, options) => ({
   ...options,
@@ -28,11 +28,11 @@ const makeDescribe = (name, options) => ({
   children: [],
 })
 
-const makeTest = (name, body) => ({
+const makeTest = (name, body, timeout = defaultTimeout) => ({
   name,
   body,
   errors: [],
-  timeout: new TimeoutError(defaultTimeout),
+  timeout: new TimeoutError(timeout),
 })
 
 currentDescribe = makeDescribe('root')
@@ -60,12 +60,12 @@ export const test = (name, optionsOrBody, body) => {
     printSkippedMsg(name)
     return
   }
-  if (options.timeout) {
-    defaultTimeout = options.timeout
-  }
   currentDescribe = {
     ...currentDescribe,
-    children: [...currentDescribe.children, makeTest(name, actualBody)],
+    children: [
+      ...currentDescribe.children,
+      makeTest(name, actualBody, options.timeout),
+    ],
   }
 }
 
