@@ -69,6 +69,10 @@ export const test = (name, optionsOrBody, body) => {
   }
 }
 
+export const skip = (name) => {
+  printSkippedMsg(name)
+}
+
 export const beforeEach = (body) => {
   currentDescribe = {
     ...currentDescribe,
