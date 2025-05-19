@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Fixed
+- Fixed `toBeEqual()` assertion to output types as well as value
+
 ## 1.0.1 - 2024-11-29
 ### Fixed
 - Based on: https://github.com/VadimNastoyashchy/scripterio/issues/1
