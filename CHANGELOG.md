@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## 1.0.2 - 2025-05-19
 ### Fixed
 - Fixed `toBeEqual()` assertion to output types as well as value
 
