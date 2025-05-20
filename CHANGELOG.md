@@ -7,6 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Changed
+- Test `skip` declaration. Moved from: 
+  ```
+  describe('description', { skip: true }, () => {})
+  //or
+  test('description', { skip: true }, () => {})
+  ```
+  to:
+  ```
+  describe.skip('description', () => {})
+  //or
+  test.skip('description', () => {})
+  ```
+- Updated documentation
+
 ## 1.0.2 - 2025-05-19
 ### Fixed
 - Fixed `toBeEqual()` assertion to output types as well as value

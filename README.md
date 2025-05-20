@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-<b>ScripterI/O - Simple, fast, runner for testing all JavaScript</b>
+<b>ScripterI/O - Simple, fast, ESM runner for testing all JavaScript</b>
 </p>
 
 <p align="center">
@@ -43,7 +43,8 @@ Use the `test` function to write test cases and the `describe` function to group
 
 More example:
 
-https://github.com/VadimNastoyashchy/scripterio-boilerplate-project
+- https://github.com/VadimNastoyashchy/scripterio-boilerplate-project
+- https://github.com/VadimNastoyashchy/json-mcp
 
 Let's start by creating the `test.js` test file.
 
@@ -55,7 +56,7 @@ Let's start by creating the `test.js` test file.
 
 test.js
 
-```
+```js
 import { describe, test, expect} from 'scripterio'
 
 describe('Title for describe block', () => {
@@ -107,7 +108,7 @@ Use `expect(actual_value)` with assertions:
 
 ### `Example↓`
 
-```
+```js
   const arr = [1, 2, 3]
   expect(arr).toHaveLength(3)
 ```
@@ -133,31 +134,37 @@ Use `expect(actual_value)` with assertions:
 
 ---
 
+## `Test annotations`
+
+`skip()`  Declares a skipped test or test group. Test/s is/are never run.
+
+### `Example↓`
+
+
+```js
+test.skip('description', () => {})
+//or
+describe.skip('description', () => {})
+```
+
+---
+
 ## `Context options`
 
 Use `{}` as the second param for describe and tests func.
 
 ### `Example↓`
 
-```
+```js
 test('description', {}, () => {})
 //or
 describe('description', {}, () => {})
-```
-
-### `Example↓`
-
-```
-describe('description', { skip: true }, () => {})
-//or
-test('description', { skip: true }, () => {})
 ```
 
 ---
 
 | Option Name         | Description                                                             |
 | ------------------- | ----------------------------------------------------------------------- |
-| `{ skip: true }`    | Option for skipping describe/test where it was provided                 |
 | `{ timeout: 2000 }` | Option timeout (in ms) for specifying how long to wait before aborting. |
 |                     | The default timeout is 5 seconds.                                       |
 
@@ -170,7 +177,7 @@ To use it just add `async` keyword before function callback inside `test` block
 
 ### `Example↓`
 
-```
+```js
 test('Wait 1 sec and check', async () => {
   const number = await new Promise((resolve) =>
     setTimeout(() => resolve(1), 1_000)

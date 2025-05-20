@@ -40,10 +40,6 @@ currentDescribe = makeDescribe('root')
 export const describe = (name, optionsOrBody, body) => {
   const options = typeof optionsOrBody === 'object' ? optionsOrBody : {}
   const actualBody = typeof optionsOrBody === 'function' ? optionsOrBody : body
-  if (options.skip) {
-    printSkippedMsg(name)
-    return
-  }
   const parentDescribe = currentDescribe
   currentDescribe = makeDescribe(name, options)
   actualBody()
@@ -56,10 +52,6 @@ export const describe = (name, optionsOrBody, body) => {
 export const test = (name, optionsOrBody, body) => {
   const options = typeof optionsOrBody === 'object' ? optionsOrBody : {}
   const actualBody = typeof optionsOrBody === 'function' ? optionsOrBody : body
-  if (options.skip) {
-    printSkippedMsg(name)
-    return
-  }
   currentDescribe = {
     ...currentDescribe,
     children: [
@@ -67,6 +59,10 @@ export const test = (name, optionsOrBody, body) => {
       makeTest(name, actualBody, options.timeout),
     ],
   }
+}
+
+export const skip = (name) => {
+  printSkippedMsg(name)
 }
 
 export const beforeEach = (body) => {

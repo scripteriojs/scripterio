@@ -3,6 +3,8 @@
 /**
  * Describe a "suite" with the given title and callback fn containing nested suites.
  *
+ * **Usage**
+ *
  * ```js
  * describe('Unit tests for assertions', () => {
  *  test('Check assertion toBeDefined()', () => {
@@ -16,10 +18,12 @@
  * @param optionsOrBody (Optional) Object with options
  * @param callback A callback that is run immediately when calling describe(name, optionsOrBody, callback)
  */
-export function describe(name: string, optionsOrBody: {}, body: {}): void
+export function describe(name: string, optionsOrBody: {}, body: {}): Options
 
 /**
  * Test a specification or test-case with the given title, test options and callback fn.
+ *
+ * **Usage**
  *
  * ```js
  * test('Check assertion toBeDefined()', () => {
@@ -32,10 +36,45 @@ export function describe(name: string, optionsOrBody: {}, body: {}): void
  * @param optionsOrBody (Optional) Object with options
  * @param callback A callback that is run immediately when calling test(name, optionsOrBody, callback)
  */
-export function test(name: string, optionsOrBody: {}, body: {}): void
+export function test(name: string, optionsOrBody: {}, body: {}): Options
 
+type Options = {
+  /**
+   * Declares a skipped test group.
+   * Tests in the skipped group are never run.
+   * - `describe.skip(title)`
+   * - `describe.skip(title, details, callback)`
+   * - `test.skip(title, callback)`
+   *
+   * **Usage**
+   *
+   * ```js
+   * describe.skip('skipped group', () => {
+   *   test('example', () => {
+   *     // This test will not run
+   *   });
+   * });
+   * ```
+   * or
+   *
+   *  * ```js
+   * describe('example', () => {
+   *   test.skip('skipped test', () => {
+   *     // This test will not run
+   *   });
+   * });
+   * ```
+   *
+   * @param name Test title.
+   * @param optionsOrBody (Optional) Object with options
+   * @param callback A callback that is run immediately when calling test(name, optionsOrBody, callback)
+   */
+  skip(name: string, optionsOrBody: {}, body: {}): void
+}
 /**
  * Execute before each test case.
+ *
+ * **Usage**
  *
  * ```js
  * beforeEach(() => {
@@ -48,6 +87,8 @@ export function beforeEach(body: () => void): void
 /**
  * Execute before all test cases.
  *
+ * **Usage**
+ *
  * ```js
  * beforeAll(() => {
  *  const number = 1
@@ -59,6 +100,8 @@ export function beforeAll(body: () => void): void
 /**
  * Execute after each test case.
  *
+ * **Usage**
+ *
  * ```js
  * afterEach(() => {
  *  const number = 1
@@ -69,6 +112,8 @@ export function afterEach(body: () => void): void
 
 /**
  * Execute after all test cases.
+ *
+ * **Usage**
  *
  * ```js
  * afterAll(() => {
@@ -82,6 +127,8 @@ type Assertions = {
   /**
    * Use .toBeDefined() to check that a variable is not undefined.
    *
+   * **Usage**
+   *
    * ```js
    *  expect(1).toBeDefined()
    * ```
@@ -90,6 +137,8 @@ type Assertions = {
 
   /**
    * Use .toBeUndefined() to check that a variable is undefined.
+   *
+   * **Usage**
    *
    * ```js
    *  expect(undefined).toBeUndefined()
@@ -100,6 +149,8 @@ type Assertions = {
   /**
    * Use .toBeEqual() to compare values are equal (also known as "deep" equality).
    *
+   * **Usage**
+   *
    * ```js
    *  expect('test').toBeEqual('test')
    * ```
@@ -108,6 +159,8 @@ type Assertions = {
 
   /**
    * Use .toBeNotEqual() to compare values are not equal (also known as "deep" equality).
+   *
+   * **Usage**
    *
    * ```js
    *  expect('real').toBeNotEqual('test')
@@ -118,6 +171,8 @@ type Assertions = {
   /**
    * Use .toBeFalsy() to check that a variable is Falsy.
    *
+   * **Usage**
+   *
    * ```js
    *  expect(false).toBeFalsy()
    * ```
@@ -126,6 +181,8 @@ type Assertions = {
 
   /**
    * Use .toBeTruthy() to check that a variable is Truthy.
+   *
+   * **Usage**
    *
    * ```js
    *  expect(true).toBeTruthy()
@@ -136,6 +193,8 @@ type Assertions = {
   /**
    * Use .toBeNull() to check that a variable is Null.
    *
+   * **Usage**
+   *
    * ```js
    *  expect(null).toBeNull()
    * ```
@@ -144,6 +203,8 @@ type Assertions = {
 
   /**
    * Use .toBeNotNull() to check that a variable is not Null.
+   *
+   * **Usage**
    *
    * ```js
    *  expect(1).toBeNotNull()
@@ -154,6 +215,8 @@ type Assertions = {
   /**
    * Use .toHaveLength() to check that an object has a .length property and it is set to a certain numeric value.
    *
+   * **Usage**
+   *
    * ```js
    *  expect([1, 2, 3]).toHaveLength(3)
    * ```
@@ -162,6 +225,8 @@ type Assertions = {
 
   /**
    * Use .toBeNaN() to check that a variable is NaN.
+   *
+   * **Usage**
    *
    * ```js
    *  expect('text').toBeNaN()
@@ -172,6 +237,8 @@ type Assertions = {
   /**
    * Use .toBeGreaterThan() to compare received > expected for number or big integer values.
    *
+   * **Usage**
+   *
    * ```js
    *  expect(5).toBeGreaterThan(4)
    * ```
@@ -181,6 +248,8 @@ type Assertions = {
   /**
    * Use .toBeLessThan() to compare received < expected for number or big integer values.
    *
+   * **Usage**
+   *
    * ```js
    *  expect(3).toBeLessThan(4)
    * ```
@@ -189,6 +258,8 @@ type Assertions = {
 
   /**
    * Use .toContain() when you want to check that an item is in an array or a string.
+   *
+   * **Usage**
    *
    * ```js
    *  expect('test').toContain('st')
@@ -201,6 +272,8 @@ type Assertions = {
   /**
    * Use .toMatch() to check that a string matches a regular expression.
    *
+   * **Usage**
+   *
    * ```js
    *  expect('test').toMatch('st')
    *  expect(['test', 'real']).toMatch('real')
@@ -212,6 +285,8 @@ type Assertions = {
 
 /**
  * Expect gives you access to a number of "matchers" that let you validate different things.
+ *
+ * **Usage**
  *
  * ```js
  *  expect(number).toBeDefined()
