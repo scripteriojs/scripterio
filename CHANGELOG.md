@@ -7,8 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## 1.0.3 - 2025-05-20
 ### Changed
-- Test `skip` declaration. Moved from: 
+- Test `skip` declaration. Moved from:
   ```
   describe('description', { skip: true }, () => {})
   //or
