@@ -15,6 +15,7 @@ on:
           - 'preminor'
           - 'premajor'
           - 'prerelease'
+permissions: write-all
 jobs:
   release:
     runs-on: ubuntu-latest
