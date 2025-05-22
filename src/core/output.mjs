@@ -41,3 +41,7 @@ export const printRunningTestFile = (testFile) => {
 }
 
 export const printNewLine = () => console.log('')
+
+export const printTags = (tags) => {
+  console.log('Using tags:' + EOL, tags)
+}
