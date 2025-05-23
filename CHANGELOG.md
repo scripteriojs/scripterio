@@ -41,6 +41,7 @@ Based on [Add tag test](https://github.com/scripterio-js/scripterio/issues/15):
 ### Changed
 - Moved repository from `personal` type: (https://github.com/VadimNastoyashchy/scripterio)
   to: its `organization` (https://github.com/scripterio-js)
+- Updated CLI help message
 - Updated documentation
 
 ## 1.0.5 - 2025-05-21
