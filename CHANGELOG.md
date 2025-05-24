@@ -43,6 +43,7 @@ Based on [Add tag test](https://github.com/scripterio-js/scripterio/issues/15):
   to: its `organization` (https://github.com/scripterio-js)
 - Updated CLI help message
 - Updated documentation
+- Updated logo
 
 ## 1.0.5 - 2025-05-21
 
